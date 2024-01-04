@@ -22,10 +22,34 @@ class Rectangle {
 
     // TODO: Define Properties that allow access to the private data
     // These are called "backing field" properties
-
+    public int W{
+        get{
+            return width;
+        }
+        set{
+            if(value<0){
+                throw new ArgumentOutOfRangeException("Width","must >=0");
+            }
+            width=value;
+        }
+    }
+    public int H{
+        get{
+            return height;
+        }
+        set{
+            if(value<0){
+                throw new ArgumentOutOfRangeException("height","must >=0");
+            }
+            height=value;
+        }
+    }
 
     // TODO: Auto-implmeneted properties don't have a backing field
-
+    public int BorderSize{
+        get;
+        set;
+    }=1;
     
     // Properties and member variables hold data
     int width;
